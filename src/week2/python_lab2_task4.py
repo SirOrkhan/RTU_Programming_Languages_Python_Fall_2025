@@ -1,4 +1,3 @@
-
 """
 Lab 3.4 – Functional Tools Practice
 
@@ -21,17 +20,18 @@ prices = [12.5, 9.9, 15.0, 22.3, 5.0]
 quantities = [2, 5, 1, 3, 4]
 
 # TODO: Compute totals using map()
-totals = []
+totals = list(map(lambda pq: pq[0] * pq[1], zip(prices, quantities)))
 
 # TODO: Filter totals above 30
-high_totals = []
+high_totals = list(filter(lambda x: x > 30, totals))
 
 # TODO: Pair prices and quantities with zip()
-pairs = []
+pairs = list(zip(prices, quantities))
 
 # TODO: Repeat using list comprehensions
-totals_comp = []
-high_totals_comp = []
+totals_comp = [p * q for p, q in zip(prices, quantities)]
+high_totals_comp = [total for total in totals_comp if total > 30]
+
 
 # TODO: Print results
 print("Totals:", totals)
